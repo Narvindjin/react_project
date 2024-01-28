@@ -1,10 +1,10 @@
 import React from "react";
 
-let LogoSvg = () => {
+const LogoSvg = () => {
     return (
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" fill="none" viewBox="0 0 44 44">
-                <g clip-path="url(#a)">
+                <g clipPath="url(#a)">
                     <path fill="#FFD24F"
                           d="M30.26 7.267C29.459 3.481 27.164.9 26.13.383c-2.323-1.161-3.097.689-4.13.689s-1.807-1.85-4.13-.689c-1.033.516-3.328 3.098-4.13 6.884-.804 3.786 8.26.689 8.26.689s9.064 3.097 8.26-.689Z"/>
                     <path fill="#FFBE1E"
@@ -52,4 +52,4 @@ let LogoSvg = () => {
     )
 }
 
-export default {LogoSvg}
+export default LogoSvg

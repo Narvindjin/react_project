@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const StyledContainer = styled.div`
     padding-left: 90px;
     padding-right: 90px;
 `
 
-export default {StyledContainer}
+export default StyledContainer
