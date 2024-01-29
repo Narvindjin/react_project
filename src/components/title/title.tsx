@@ -2,14 +2,14 @@ import React from 'react';
 import StyledTitle from './styles';
 
 interface Title {
-    markupLevel: number | false,
+    markupLevel: 1 | 2 | 3| 4 | 5 | 6 | false,
     styleLevel: 1 | 2 | 3 | 4,
     margin: number,
-    children: string,
+    center?: boolean|undefined,
 }
 
-const TitleComponent = ({markupLevel, styleLevel, margin}: Title) => {
-    let customTitleTag:string;
+const TitleComponent = ({markupLevel, styleLevel, margin, center=false}: React.PropsWithChildren<Title>) => {
+    let customTitleTag;
     if (markupLevel) {
         customTitleTag = 'h' + markupLevel;
     } else {
@@ -17,7 +17,7 @@ const TitleComponent = ({markupLevel, styleLevel, margin}: Title) => {
     }
 
     return (
-        <StyledTitle as={customTitleTag} level={styleLevel} margin={margin}>
+        <StyledTitle as={customTitleTag} center={center} level={styleLevel} margin={margin}>
 
         </StyledTitle>
     )

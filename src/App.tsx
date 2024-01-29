@@ -1,22 +1,15 @@
 import React from 'react';
 import Wrapper from "./wrapper";
+import Header from "./blocks/header/header";
+import FrontMain from "./blocks/frontpage/front-main";
+import Footer from "./blocks/footer/footer";
 
 function App() {
   return (
           <Wrapper>
-            <header className="App-header">
-              <p>
-                Edit <code>src/App.tsx</code> and save to reload.
-              </p>
-              <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
+              <Header/>
+              <FrontMain/>
+              <Footer/>
           </Wrapper>
   );
 }

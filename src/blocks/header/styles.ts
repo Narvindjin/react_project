@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledHeader = styled.header`
+const StyledContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,4 +11,4 @@ const StyledHeader = styled.header`
     align-items: center;
 `
 
-export default StyledHeader
+export default StyledContainer

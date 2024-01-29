@@ -1,18 +1,21 @@
 import React from 'react';
-import StyledHeader from './styles'
+import StyledContainer from './styles'
 import Container from "../../components/container/container";
 import Logo from '../../components/logo/logo';
+import Button from "../../components/button/button";
 
 function Header() {
     return (
-        <StyledHeader>
+        <header>
             <Container>
-                <Logo>
-                </Logo>
-                <Button>Купить</Button>
+                <StyledContainer>
+                    <Logo>
+                    </Logo>
+                    <Button as='a'>Купить</Button>
+                </StyledContainer>
             </Container>
-        </StyledHeader>
+        </header>
     )
 }
 
-export default {Header}
+export default Header
