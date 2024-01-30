@@ -9,8 +9,7 @@ function Header() {
         <header>
             <Container>
                 <StyledContainer>
-                    <Logo>
-                    </Logo>
+                    <Logo/>
                     <Button as='a'>Купить</Button>
                 </StyledContainer>
             </Container>

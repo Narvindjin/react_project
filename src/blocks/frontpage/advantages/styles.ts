@@ -9,8 +9,13 @@ const AdvantagesWrapper = styled.div`
 
 const AdvantagesColumn = styled.ul`
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
 `
 
 const ButtonContainer = styled.div`

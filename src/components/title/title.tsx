@@ -8,7 +8,7 @@ interface Title {
     center?: boolean|undefined,
 }
 
-const TitleComponent = ({markupLevel, styleLevel, margin, center=false}: React.PropsWithChildren<Title>) => {
+const TitleComponent = ({markupLevel, styleLevel, margin, children, center=false}: React.PropsWithChildren<Title>) => {
     let customTitleTag;
     if (markupLevel) {
         customTitleTag = 'h' + markupLevel;
@@ -17,8 +17,8 @@ const TitleComponent = ({markupLevel, styleLevel, margin, center=false}: React.P
     }
 
     return (
-        <StyledTitle as={customTitleTag} center={center} level={styleLevel} margin={margin}>
-
+        <StyledTitle as={customTitleTag} $center={center} $level={styleLevel} $margin={margin}>
+            {children}
         </StyledTitle>
     )
 }

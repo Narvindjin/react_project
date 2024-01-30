@@ -11,6 +11,7 @@ const StyledButton = styled.button`
     ${textBold};
     align-items: center;
     justify-content: center;
+    background-color: ${(props) => props.theme.colorYellow};
     color: ${(props) => props.theme.colorWhite};
 `
 
