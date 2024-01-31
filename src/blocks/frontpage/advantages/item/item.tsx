@@ -2,13 +2,13 @@ import React from 'react';
 import {StyledItem, StyledAdvantageTitle, StyledUpperDiv, StyledUpperTextContainer, StyledText, StyledTag} from "./styles";
 
 interface advantageInterface {
-    id: number,
+    id?: number,
     positive:boolean,
     title:string,
     text: string,
 }
 
-const AdvantagesItem = ({positive, id, title, text}:React.PropsWithChildren<advantageInterface>) => {
+const AdvantagesItem = ({positive, title, text}:React.PropsWithChildren<advantageInterface>) => {
     return (
         <StyledItem $positive={positive}>
             <StyledUpperDiv>

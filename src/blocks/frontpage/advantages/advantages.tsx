@@ -21,7 +21,7 @@ const Advantages = () => {
         if (array.length) {
             const list = array.map((advantage) => {
                 return (
-                    <AdvantagesItem positive={advantage.positive} key={advantage.id} id={advantage.id} text={advantage.text} title={advantage.title}>
+                    <AdvantagesItem positive={advantage.positive} key={advantage.id} text={advantage.text} title={advantage.title}>
                     </AdvantagesItem>
                 )
             })

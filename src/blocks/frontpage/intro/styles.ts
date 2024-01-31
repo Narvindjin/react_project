@@ -9,6 +9,14 @@ const IntroWrapper = styled.div`
     ${blockMargin};
 `
 
+const TextAreaContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+`
+
 const TextContainer = styled.div`
     display: block;
     margin: auto auto auto 0;
@@ -20,4 +28,4 @@ const Text = styled.p`
     ${textNormal};
 `
 
-export {IntroWrapper, TextContainer, Text}
+export {IntroWrapper, TextContainer, Text, TextAreaContainer}

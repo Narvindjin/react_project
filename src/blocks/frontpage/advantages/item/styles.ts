@@ -31,6 +31,7 @@ const StyledUpperTextContainer = styled.div`
 const StyledTag = styled.div<{$positive:boolean}>`
     display: flex;
     padding: 4px 10px 4px 10px;
+    width: fit-content;
     ${textSmall};
     color: ${(props) => props.theme.colorWhite};
     background-color: ${(props) => {
