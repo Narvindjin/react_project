@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import StyledTitle from "../../../components/title/styles"
-import {textBold} from "../../../mixins";
+import {textBold, textSmall} from "../../../mixins";
 import {StyledInput} from "../../../components/input/styles";
 
 const StyledForm = styled.form`
@@ -26,16 +26,27 @@ const EmailInput = styled(StyledInput)`
     margin-bottom: 20px;
 `
 
-const priceContainer = styled.div`
+const PriceContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
 `
 
-const smallPrice = styled.p`
-    
+const SmallPrice = styled.p`
+    margin: 0;
+    ${textSmall};
+`
+
+const GoodsList = styled.ul`
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
 `
 
 
 
-export {StyledForm, StyledFieldset, EmailInput}
+export {StyledForm, StyledFieldset, EmailInput, PriceContainer, SmallPrice, GoodsList}

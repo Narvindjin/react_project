@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {textBold} from "../../mixins";
+import {StyledInput} from "../input/styles";
 
 const StyledButton = styled.button`
     display: flex;
@@ -15,4 +16,9 @@ const StyledButton = styled.button`
     color: ${(props) => props.theme.colorWhite};
 `
 
-export default StyledButton
+const StyledButtonFullWidth = styled(StyledButton)`
+    min-width: unset;
+    width: 100%;
+`
+
+export {StyledButton, StyledButtonFullWidth}

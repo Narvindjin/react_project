@@ -1,13 +1,13 @@
 import React from 'react';
-import StyledButton from './styles'
+import {StyledButton} from './styles'
 
 interface Button {
-    as: any
+    as?: any
 }
 
 function Button({as, children}:React.PropsWithChildren<Button>) {
     return (
-        <StyledButton as={as}>
+        <StyledButton as={as?as:null}>
             {children}
         </StyledButton>
     )
