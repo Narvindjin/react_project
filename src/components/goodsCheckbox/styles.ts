@@ -43,11 +43,11 @@ const StyledInputContainer = styled.div`
     }
     
     input {
-        &:checked > label::after {
+        &:checked + label::after {
             background: ${(props) => props.theme.colorOrange};
         }
         
-        &:checked > label::before {
+        &:checked + label::before {
             display: block;
         }
     }
