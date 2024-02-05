@@ -8,6 +8,8 @@ const StyledForm = styled.form`
     flex-direction: column;
     margin-bottom: 40px;
     gap: 18px;
+    width: 353px;
+    min-width: 353px;
 `
 
 const StyledFieldset = styled.fieldset`

@@ -23,4 +23,4 @@ interface propsInterface {
     protein?: number,
 }
 
-export {goodsInterface}
+export type {goodsInterface}

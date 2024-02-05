@@ -1,3 +1,4 @@
+import React from "react";
 import {AttrsText, PriceWeightContainer} from "./styles";
 
 const AttrsTab = () => {

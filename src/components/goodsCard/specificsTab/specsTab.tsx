@@ -1,3 +1,4 @@
+import React from "react";
 import {StyledDl, StyledDd, StyledDt, DescriptionContainer} from "./styles";
 
 const SpecsTab = () => {
