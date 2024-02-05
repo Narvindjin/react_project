@@ -11,7 +11,7 @@ const CatalogueMain = () => {
             <Container>
                 <StyledContainer>
                     <BuySection goods={goodsArray}/>
-                    <GoodsSlider/>
+                    <GoodsSlider goods={goodsArray}/>
                 </StyledContainer>
             </Container>
         </main>

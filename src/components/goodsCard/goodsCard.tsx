@@ -3,8 +3,9 @@ import {TabList, TabItem, TextZone, CardContainer} from "./styles";
 import TitleComponent from "../title/title";
 import SpecsTab from "./specificsTab/specsTab";
 import AttrsTab from "./descTab/attrsTab";
+import {goodsInterface} from "../../blocks/catalogue/goodsSlider/goodsInterface";
 
-const GoodsCard = () => {
+const GoodsCard = ({goodsItem}:React.PropsWithChildren<goodsInterface>) => {
     return (
         <CardContainer>
             <image></image>
