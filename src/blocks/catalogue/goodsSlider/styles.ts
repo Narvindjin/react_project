@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledList = styled.ul`
+const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -9,4 +9,4 @@ const StyledList = styled.ul`
     list-style-type: none;
 `
 
-export {StyledList}
+export {StyledContainer}
