@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledTitle = styled.h1<{$margin:number, $level:1|2|3|4, $center:boolean|undefined}>`
+const StyledTitle = styled.h1<{$margin:number, $level:1|2|3|4, $center:boolean|undefined, $float:boolean|undefined}>`
     margin-top: 0;
     margin-bottom: ${(props)=>props.$margin}px;
     font-weight: 700;
@@ -10,6 +10,12 @@ const StyledTitle = styled.h1<{$margin:number, $level:1|2|3|4, $center:boolean|u
             return 'center'
         }
         return 'start'
+    }};
+    float: ${(props) => {
+        if (props.$float) {
+            return 'left'
+        }
+        return 'unset'
     }};
     font-size: ${(props)=> {
         switch (props.$level) {

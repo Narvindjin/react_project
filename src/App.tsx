@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import React from 'react';
-import Wrapper from "./wrapper";
+import {Wrapper} from "./wrapper";
 import Header from "./blocks/header/header";
 import FrontMain from "./blocks/frontpage/front-main";
 import { register } from 'swiper/element/bundle';

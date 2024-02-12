@@ -12,17 +12,18 @@ const GoodsSlider = ({goodsArray, slideId}: React.PropsWithChildren<goodsSection
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const swiperRef = useRef<any>(null)
     useEffect(() => {
-            swiperRef?.current?.slideTo(slideId);
+        if (swiperRef.current) {
+            swiperRef.current.swiper.slideTo(slideId);
         }
-    )
+    }, [])
     return (
         <StyledContainer>
             <swiper-container
                 ref={swiperRef}
                 direction="vertical"
                 slidesPerView="auto"
-                scrollbar={{draggable: true}}
-                mousewheel
+                scrollbar-draggable={true}
+                mousewheel={true}
                 spaceBetween={12}
             >
                 {goodsArray.map((goodsItem) => {

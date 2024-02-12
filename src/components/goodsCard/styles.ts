@@ -28,16 +28,45 @@ const TabList = styled.ul`
 
 const TabItem = styled.li`
     display: flex;
+`
+
+const TabButton = styled.button<{$state:string}>`
+    display: flex;
     width: fit-content;
     padding: 7px 11px 7px 11px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     ${textSmall};
+    transition: background-color ${(props) => props.theme.transDefault}, color ${(props) => props.theme.transDefault};
+    background-color: ${(props) => {
+        if (props.$state === 'current') {
+            return props.theme.colorDarkGreen;
+        }
+        return 'transparent'
+    }};
     
-    &.current {
-        background-color: ${(props) => props.theme.colorDarkGreen};
-        color: ${(props) => props.theme.colorWhite}
-    }
+    color: ${(props) => {
+        if (props.$state === 'current') {
+            return props.theme.colorWhite;
+        }
+        return props.theme.colorBlack;
+    }};
 `
 
-export {CardContainer, TabItem, TabList, TextZone}
+const TabContent = styled.div<{$state:string}>`
+    display: ${(props) => {
+        if (props.$state === 'd-none') {
+            return 'none';
+        }
+        return 'block'
+    }};
+    opacity: ${(props) => {
+        if (props.$state !== 'current') {
+            return 0;
+        }
+        return 1;
+    }};
+    transition: opacity 0.15s ease;
+`
+
+export {CardContainer, TabItem, TabList, TextZone, TabContent, TabButton}
 

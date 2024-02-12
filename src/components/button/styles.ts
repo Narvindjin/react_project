@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {textBold} from "../../mixins";
-import {StyledInput} from "../input/styles";
 
 const StyledButton = styled.button`
     display: flex;
@@ -12,6 +11,7 @@ const StyledButton = styled.button`
     ${textBold};
     align-items: center;
     justify-content: center;
+    border: none;
     background-color: ${(props) => props.theme.colorYellow};
     color: ${(props) => props.theme.colorWhite};
 `

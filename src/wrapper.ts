@@ -16,4 +16,8 @@ const Wrapper = styled.div`
   }
 `
 
-export default Wrapper;
+const FullPageWrapper = styled(Wrapper)`
+    height: 100vh;
+`
+
+export {Wrapper, FullPageWrapper};

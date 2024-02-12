@@ -9,6 +9,8 @@ const theme = {
     colorOrange: "#F75531",
     colorYellow: "#FC9B27",
     fontInter: "\"Inter\", \"Arial\", sans-serif",
+    transTime: "0.3s",
+    transDefault: "0.3s ease",
 }
 
 export default theme

@@ -12,23 +12,24 @@ interface buySection {
 
 const BuySection = ({goods, setSlideId}:React.PropsWithChildren<buySection>) => {
     const [fullPrice, setFullPrice] = useState(0)
+    const [submitDisabled, setSubmitDisabled] = useState(false)
 
-    const handlePriceChange = (goodsObject:goodsInterface) => {
-        const newFullPrice = fullPrice + goodsObject.price;
+    const handlePriceChange = (goodsObject:goodsInterface, evt: null|ChangeEvent = null) => {
+        let newFullPrice = fullPrice;
+        if (evt) {
+            const eventTarget = evt.target as HTMLInputElement;
+            if (eventTarget.checked) {
+                newFullPrice+=goodsObject.price;
+            } else {
+                newFullPrice-=goodsObject.price;
+            }
+        }
         setSlideId(goodsObject.id);
         setFullPrice(newFullPrice);
         enableSubmitButtonCheck();
     }
 
     let emailValidity = false;
-
-    interface submitDisabled {
-        disabled?: boolean
-    }
-
-    let submitDisabled:submitDisabled = {
-        disabled: false
-    }
 
     const submitEnableChecker = () => {
         if (fullPrice > 0 && emailValidity) {
@@ -42,43 +43,40 @@ const BuySection = ({goods, setSlideId}:React.PropsWithChildren<buySection>) => 
         if (evt) {
             const target = evt.target as HTMLInputElement
             if (target && target.checkValidity()) {
-                emailValidity = true
+                emailValidity = true;
             } else {
-                emailValidity = false
+                emailValidity = false;
             }
         }
         if (fullPrice > 0 && submitEnableChecker()) {
-            submitDisabled = {}
+            setSubmitDisabled(false);
         } else {
-            submitDisabled = {
-                disabled: true
-            }
+            setSubmitDisabled(true);
         }
     }
 
     return (
         <StyledForm>
             <StyledFieldset>
-                <TitleComponent margin={12} styleLevel={1} markupLevel={'legend'}>Выберите продукты</TitleComponent>
+                <TitleComponent float={true} margin={12} styleLevel={1} markupLevel={'legend'}>Выберите продукты</TitleComponent>
                 <GoodsList>
                     {goods.map((goodsItem) => {
                         return (
                             <li key={goodsItem.id}>
-                                <GoodsCheckbox onChange={() => handlePriceChange(goodsItem)} price={goodsItem.price} name={goodsItem.name} id={goodsItem.id}>
-                                </GoodsCheckbox>
+                                <GoodsCheckbox onChange={(evt) => handlePriceChange(goodsItem, evt)} price={goodsItem.price} name={goodsItem.name} id={goodsItem.id}>{goodsItem.name}</GoodsCheckbox>
                             </li>
                         )
                     })}
                 </GoodsList>
             </StyledFieldset>
             <StyledFieldset>
-                <TitleComponent margin={24} styleLevel={1} markupLevel={'legend'}>Сделать заказ</TitleComponent>
+                <TitleComponent float={true} margin={24} styleLevel={1} markupLevel={'legend'}>Сделать заказ</TitleComponent>
                 <EmailInput onChange={(evt) => enableSubmitButtonCheck(evt)} placeholder={'Введите адрес доставки'} required={true} type={"email"}></EmailInput>
                 <PriceContainer>
                     <SmallPrice>Цена:</SmallPrice>
                     <TitleComponent margin={32} markupLevel={'p'} styleLevel={4}>{fullPrice} руб.</TitleComponent>
                 </PriceContainer>
-                <StyledButtonFullWidth {...submitDisabled} type={'submit'}>Купить</StyledButtonFullWidth>
+                <StyledButtonFullWidth disabled={submitDisabled} type={'submit'}>Купить</StyledButtonFullWidth>
             </StyledFieldset>
         </StyledForm>
     )

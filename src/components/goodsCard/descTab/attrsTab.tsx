@@ -1,9 +1,9 @@
 import React from "react";
 import {AttrsText, PriceWeightContainer} from "./styles";
-import { goodsInterface } from "../../../blocks/catalogue/goodsSlider/goodsInterface";
+import { mainInterface } from "../../../blocks/catalogue/goodsSlider/goodsInterface";
 
 interface goodsProp {
-    goodsItem: goodsInterface
+    goodsItem: mainInterface,
 }
 
 const AttrsTab = ({goodsItem}:React.PropsWithChildren<goodsProp>) => {

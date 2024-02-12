@@ -3,10 +3,18 @@ interface goodsInterface {
     price: number,
     weightGram: number,
     name: string,
-    description: string,
     pictureUrl: string,
-    charsObject: charInterface,
-    propsObject: propsInterface
+    tabs: {
+        mainObject: mainInterface,
+        charsObject: charInterface,
+        propsObject: propsInterface,
+    }
+}
+
+interface mainInterface {
+    description: string,
+    price: number,
+    weightGram: number,
 }
 
 interface charInterface {
@@ -23,4 +31,4 @@ interface propsInterface {
     protein?: number,
 }
 
-export type {goodsInterface, charInterface, propsInterface}
+export type {goodsInterface, charInterface, propsInterface, mainInterface}

@@ -1,30 +1,25 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import {StyledInputContainer} from "./styles";
+import { goodsInterface} from "../../blocks/catalogue/goodsSlider/goodsInterface";
 
 interface Required {
     required?: boolean
 }
 
+
+
 interface Checkbox {
     id: string | number,
     name: string,
-    required?: Required,
-    onChange?: (arg0:number)=>void,
+    required?: boolean,
+    onChange?: (evt: (null|ChangeEvent))=>void,
     price: number,
 }
-const GoodsCheckbox = ({id, onChange, name, required, price, children}:React.PropsWithChildren<Checkbox>) => {
+const GoodsCheckbox = ({id, onChange, name, required, children}:React.PropsWithChildren<Checkbox>) => {
     const stringId = '' + id;
     return (
         <StyledInputContainer>
-            <input type={"checkbox"} name={name} id={stringId} {...required} className={'visually-hidden'} onChange={(evt) => {
-                if (onChange) {
-                    if (evt.target.checked) {
-                        onChange(price);
-                    } else {
-                        onChange(-price);
-                    }
-                }
-            }}/>
+            <input type={"checkbox"} name={name} id={stringId} required={required? required: false} className={'visually-hidden'} onChange={onChange}/>
             <label htmlFor={stringId}>{children}</label>
         </StyledInputContainer>
     )
