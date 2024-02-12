@@ -5,11 +5,16 @@ import {goodsInterface} from "./goodsInterface";
 
 interface goodsSection {
     goodsArray: goodsInterface[];
+    slideId: number;
 }
 
-const GoodsSlider = ({goodsArray}: React.PropsWithChildren<goodsSection>) => {
-    const swiperRef = useRef(null)
-
+const GoodsSlider = ({goodsArray, slideId}: React.PropsWithChildren<goodsSection>) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const swiperRef = useRef<any>(null)
+    useEffect(() => {
+            swiperRef?.current?.slideTo(slideId);
+        }
+    )
     return (
         <StyledContainer>
             <swiper-container

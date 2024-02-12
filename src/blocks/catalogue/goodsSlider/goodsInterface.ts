@@ -1,5 +1,5 @@
 interface goodsInterface {
-    id: string,
+    id: number,
     price: number,
     weightGram: number,
     name: string,
@@ -23,4 +23,4 @@ interface propsInterface {
     protein?: number,
 }
 
-export type {goodsInterface}
+export type {goodsInterface, charInterface, propsInterface}

@@ -6,16 +6,17 @@ interface Required {
 }
 
 interface Checkbox {
-    id: string,
+    id: string | number,
     name: string,
     required?: Required,
     onChange?: (arg0:number)=>void,
     price: number,
 }
 const GoodsCheckbox = ({id, onChange, name, required, price, children}:React.PropsWithChildren<Checkbox>) => {
+    const stringId = '' + id;
     return (
         <StyledInputContainer>
-            <input type={"checkbox"} name={name} id={id} {...required} className={'visually-hidden'} onChange={(evt) => {
+            <input type={"checkbox"} name={name} id={stringId} {...required} className={'visually-hidden'} onChange={(evt) => {
                 if (onChange) {
                     if (evt.target.checked) {
                         onChange(price);
@@ -24,7 +25,7 @@ const GoodsCheckbox = ({id, onChange, name, required, price, children}:React.Pro
                     }
                 }
             }}/>
-            <label htmlFor={id}>{children}</label>
+            <label htmlFor={stringId}>{children}</label>
         </StyledInputContainer>
     )
 }

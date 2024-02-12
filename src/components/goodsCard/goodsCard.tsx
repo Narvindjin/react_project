@@ -2,10 +2,15 @@ import React from 'react';
 import {TabList, TabItem, TextZone, CardContainer} from "./styles";
 import TitleComponent from "../title/title";
 import SpecsTab from "./specificsTab/specsTab";
+import PropsTab from './specificsTab/propsTab';
 import AttrsTab from "./descTab/attrsTab";
 import {goodsInterface} from "../../blocks/catalogue/goodsSlider/goodsInterface";
 
-const GoodsCard = ({goodsItem}:React.PropsWithChildren<goodsInterface>) => {
+interface goodsProp {
+    goodsItem: goodsInterface
+}
+
+const GoodsCard = ({goodsItem}:React.PropsWithChildren<goodsProp>) => {
     return (
         <CardContainer>
             <image></image>
@@ -16,9 +21,9 @@ const GoodsCard = ({goodsItem}:React.PropsWithChildren<goodsInterface>) => {
                     </TabItem>
                 </TabList>
                 <div>
-                    <AttrsTab></AttrsTab>
-                    <SpecsTab></SpecsTab>
-                    <SpecsTab></SpecsTab>
+                    <AttrsTab goodsItem={goodsItem}></AttrsTab>
+                    <SpecsTab goodsItemTab={goodsItem.charsObject}></SpecsTab>
+                    <PropsTab goodsItemTab={goodsItem.propsObject}></PropsTab>
                 </div>
             </TextZone>
         </CardContainer>

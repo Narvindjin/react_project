@@ -7,22 +7,29 @@ import { goodsInterface } from "../goodsSlider/goodsInterface";
 
 interface buySection {
     goods: goodsInterface[];
+    setSlideId: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const BuySection = ({goods}:React.PropsWithChildren<buySection>) => {
+const BuySection = ({goods, setSlideId}:React.PropsWithChildren<buySection>) => {
     const [fullPrice, setFullPrice] = useState(0)
-    const handlePriceChange = (goodsPrice:number) => {
-        const newFullPrice = fullPrice + goodsPrice;
+
+    const handlePriceChange = (goodsObject:goodsInterface) => {
+        const newFullPrice = fullPrice + goodsObject.price;
+        setSlideId(goodsObject.id);
         setFullPrice(newFullPrice);
         enableSubmitButtonCheck();
     }
+
     let emailValidity = false;
+
     interface submitDisabled {
         disabled?: boolean
     }
+
     let submitDisabled:submitDisabled = {
         disabled: false
     }
+
     const submitEnableChecker = () => {
         if (fullPrice > 0 && emailValidity) {
             return true
@@ -57,7 +64,7 @@ const BuySection = ({goods}:React.PropsWithChildren<buySection>) => {
                     {goods.map((goodsItem) => {
                         return (
                             <li key={goodsItem.id}>
-                                <GoodsCheckbox onChange={handlePriceChange} price={goodsItem.price} name={goodsItem.name} id={goodsItem.id}>
+                                <GoodsCheckbox onChange={() => handlePriceChange(goodsItem)} price={goodsItem.price} name={goodsItem.name} id={goodsItem.id}>
                                 </GoodsCheckbox>
                             </li>
                         )
