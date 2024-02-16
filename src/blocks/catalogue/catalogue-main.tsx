@@ -9,9 +9,7 @@ const CatalogueMain = () => {
     const [slideId, setSlideId] = useState(0);
 
     return (
-        <main style={{
-            height: 'calc(100vh - 180px)'
-        }}>
+        <main>
             <Container>
                 <StyledContainer>
                     <BuySection goods={goodsArray} setSlideId={setSlideId} />

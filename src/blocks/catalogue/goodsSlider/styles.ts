@@ -9,6 +9,10 @@ const StyledContainer = styled.div`
     list-style-type: none;
     height: 100%;
     width: 100%;
+
+    & swiper-container {
+        height: 768px;
+    }
 `
 
 export {StyledContainer}

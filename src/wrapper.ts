@@ -4,7 +4,6 @@ const Wrapper = styled.div`
     position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 
   header,
   footer {
@@ -16,8 +15,4 @@ const Wrapper = styled.div`
   }
 `
 
-const FullPageWrapper = styled(Wrapper)`
-    height: 100vh;
-`
-
-export {Wrapper, FullPageWrapper};
+export {Wrapper};

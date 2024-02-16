@@ -1,10 +1,5 @@
 import React, {ChangeEvent} from 'react';
 import {StyledInputContainer} from "./styles";
-import { goodsInterface} from "../../blocks/catalogue/goodsSlider/goodsInterface";
-
-interface Required {
-    required?: boolean
-}
 
 
 

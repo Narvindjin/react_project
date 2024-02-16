@@ -15,7 +15,7 @@ const GoodsSlider = ({goodsArray, slideId}: React.PropsWithChildren<goodsSection
         if (swiperRef.current) {
             swiperRef.current.swiper.slideTo(slideId);
         }
-    }, [])
+    }, [slideId])
     return (
         <StyledContainer>
             <swiper-container
